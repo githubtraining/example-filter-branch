@@ -29,3 +29,5 @@ If you use `force push` you may also be removing commits they recently made from
 ![Binary Removed, SHAs rewritten](binary-removed.png)
 
 [Simple Filter Branch Demo](https://help.github.com/articles/remove-sensitive-data/) at GitHub in the context of removing sensitive data, but the process is the same for a large binary asset.
+
+[BFR Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/) is a faster alternative to filter-branch. It works well for removing large files and similar tasks.
