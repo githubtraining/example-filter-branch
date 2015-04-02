@@ -9,17 +9,17 @@ Performing this action rewrites the commit history. I needed to do a `force push
 If you use `force push` you may also be removing commits they recently made from master. Extreme caution should be used and coordination with other team members is a must.
 
 ### Steps Taken to Remove Large File
-1. Created repo
-2. Added three files and committed
-3. Added iTerm2 zip file (large file to be removed)
-4. Added three more commits
-5. Executed a `filter-branch` command. Here it is:
+- Created repo
+- Added three files and committed
+- Added iTerm2 zip file (large file to be removed)
+- Added three more commits
+- Executed a `filter-branch` command. Here it is:
   - ```
     git filter-branch --force --index-filter \
     'git rm --cached --ignore-unmatch iTerm2_v2_0.zip' \
     --prune-empty --tag-name-filter cat -- --all
     ```
-6. After git rewrites history and removes iTerm2 file I force pushed my repository to origin and all traces of the iTerm2 file were gone. 
+- After git rewrites history and removes iTerm2 file I force pushed my repository to origin and all traces of the iTerm2 file were gone. 
 
 **Commit History on Origin with Binary Included Before Filter-Branch**
 
@@ -31,3 +31,14 @@ If you use `force push` you may also be removing commits they recently made from
 [Simple Filter Branch Demo](https://help.github.com/articles/remove-sensitive-data/) at GitHub in the context of removing sensitive data, but the process is the same for a large binary asset.
 
 [BFR Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/) is a faster alternative to filter-branch. It works well for removing large files and similar tasks.
+
+## Splicing in One Branch into The Middle of Another
+Let's say you want to take one orphaned branch (commits X,Y and Z in our example) and splice it into your master branch (between commits B and C). Here is a picture of the example: 
+
+![Splice Example](splice-example.png)
+
+You can use rebase for this and have it done in a few steps. Here is an example of the process:
+
+- 
+
+
