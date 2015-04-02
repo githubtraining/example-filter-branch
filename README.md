@@ -12,13 +12,13 @@ If you use `force push` you may also be removing commits they recently made from
 1. Created repo
 2. Added three files and committed
 3. Added iTerm2 zip file (large file to be removed)
-4. Added two more commits
+4. Added three more commits
 5. Executed a `filter-branch` command. Here it is:
-```
-git filter-branch --force --index-filter \
-'git rm --cached --ignore-unmatch iTerm2_v2_0.zip' \
---prune-empty --tag-name-filter cat -- --all
-```
+  - ```
+    git filter-branch --force --index-filter \
+    'git rm --cached --ignore-unmatch iTerm2_v2_0.zip' \
+    --prune-empty --tag-name-filter cat -- --all
+    ```
 6. After git rewrites history and removes iTerm2 file I force pushed my repository to origin and all traces of the iTerm2 file were gone. 
 
 **Commit History on Origin with Binary Included Before Filter-Branch**
